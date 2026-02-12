@@ -96,3 +96,48 @@ HPA           = Scales pods
 Service       = Exposes pods
 ```
 
+## 🏗 Complete Project Structure (From Root)
+
+```bash
+project-root/
+│
+├── src/                        # Application source code
+│   ├── index.ts
+│   └── ...
+│
+├── Dockerfile
+├── package.json
+├── package-lock.json
+│
+├── .env                        # Local development only (NOT for k8s)
+│
+├── k8s/                        # Kubernetes main folder
+│
+│   ├── base/                   # Base reusable configs
+│   │   ├── deployment.yaml
+│   │   ├── service.yaml
+│   │   ├── configmap.yaml
+│   │   ├── secret.yaml
+│   │   └── hpa.yaml
+│   │
+│   ├── dev/                    # Dev environment configs
+│   │   ├── namespace.yaml
+│   │   ├── deployment.yaml
+│   │   ├── service.yaml
+│   │   ├── configmap.yaml
+│   │   ├── secret.yaml
+│   │   └── hpa.yaml
+│   │
+│   ├── prod/                   # Production environment configs
+│   │   ├── namespace.yaml
+│   │   ├── deployment.yaml
+│   │   ├── service.yaml
+│   │   ├── configmap.yaml
+│   │   ├── secret.yaml
+│   │   ├── hpa.yaml
+│   │   └── ingress.yaml
+│   │
+│   └── README.md               # Notes about k8s setup
+│
+└── README.md                   # Project documentation
+```
