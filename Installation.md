@@ -313,6 +313,8 @@ kubectl logs <pod-name> -n kube-system
 systemctl status kubelet
 ```
 
+---
+
 ## Services That Must Start After Reboot
 
 ```table
