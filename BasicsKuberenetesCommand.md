@@ -43,6 +43,9 @@ All system pods: Running
 ## 🌐 Kubernetes Dashboard (Local Access)
 
 ```bash
+# Install dashboard
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+
 # Start proxy (keep terminal open)
 kubectl proxy
 
