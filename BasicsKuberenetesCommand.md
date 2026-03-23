@@ -55,6 +55,17 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 # Login Token
 kubectl -n kubernetes-dashboard create token admin-user
 
+# If admin not found (Create ServiceAccount)
+kubectl create serviceaccount admin-user -n kubernetes-dashboard
+
+# Give admin permissions
+kubectl create clusterrolebinding admin-user \
+  --clusterrole=cluster-admin \
+  --serviceaccount=kubernetes-dashboard:admin-user
+
+# Generate token
+kubectl -n kubernetes-dashboard create token admin-user
+
 ```
 
 ## 🧭 Dashboard Navigation
