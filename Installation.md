@@ -92,6 +92,9 @@ sudo nano /etc/containerd/config.toml
 # Set
 SystemdCgroup = true
 
+# Comment this
+disabled_plugins = ["cri"]
+
 #Whwre need to set (search this in nano)
 # [plugins.'io.containerd.cri.v1.runtime'.containerd.runtimes.runc.options]
 #   BinaryName = ''
