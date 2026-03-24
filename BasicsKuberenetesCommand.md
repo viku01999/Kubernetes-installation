@@ -28,6 +28,16 @@ You will deploy applications, access them, understand networking, and clean up r
 
 ---
 
+## 👉 Restart kubernetes
+```bash
+sudo systemctl daemon-reexec
+sudo systemctl restart containerd
+sudo systemctl restart kubelet
+
+# Check kubelet status
+sudo systemctl status kubelet
+```
+
 ## ✅ Verify Cluster
 
 ```bash
